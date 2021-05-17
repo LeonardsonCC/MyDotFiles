@@ -172,15 +172,6 @@ gls.right[6] = {
 }
 
 gls.right[7] = {
-    PerCent = {
-        provider = 'LinePercent',
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
-    }
-}
-
-gls.right[8] = {
     Tabstop = {
         provider = function()
             return "Spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth") .. " "
@@ -192,7 +183,7 @@ gls.right[8] = {
     }
 }
 
-gls.right[9] = {
+gls.right[8] = {
     BufferType = {
         provider = 'FileTypeName',
         condition = condition.hide_in_width,
@@ -202,7 +193,7 @@ gls.right[9] = {
     }
 }
 
-gls.right[10] = {
+gls.right[9] = {
     FileEncode = {
         provider = 'FileEncode',
         condition = condition.hide_in_width,
@@ -212,7 +203,7 @@ gls.right[10] = {
     }
 }
 
-gls.right[11] = {
+gls.right[10] = {
     Space = {
         provider = function()
             return ' '
