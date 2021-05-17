@@ -51,8 +51,21 @@ gls.left[1] = {
                 ['!'] = colors.blue,
                 t = colors.blue
             }
+            local alias = {
+                n = 'NORMAL',
+                i = 'INSERT',
+                c = 'COMMAND',
+                V = 'VISUAL',
+                [''] = 'VISUAL',
+                v = 'VISUAL',
+                R = 'REPLACE',
+            }
             vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
-            return '▊ '
+            local alias_mode = alias[vim.fn.mode()]
+            if alias_mode == nil then
+              alias_mode = vim.fn.mode()
+            end
+            return '▊ '..alias_mode..' '
         end,
         highlight = {colors.red, colors.bg}
     }
@@ -60,7 +73,24 @@ gls.left[1] = {
 print(vim.fn.getbufvar(0, 'ts'))
 vim.fn.getbufvar(0, 'ts')
 
-gls.left[2] = {
+gls.left[2] ={
+  FileIcon = {
+    provider = 'FileIcon',
+    condition = buffer_not_empty,
+    highlight = { require('galaxyline.provider_fileinfo').get_file_icon_color, colors.bg },
+  },
+}
+gls.left[3] = {
+  FileName = {
+    provider = 'FileName',
+    condition = buffer_not_empty,
+    highlight = { colors.fg, colors.bg },
+    separator = " ",
+    separator_highlight = {colors.bg, colors.bg},
+  }
+}
+
+gls.left[4] = {
     GitIcon = {
         provider = function()
             return ' '
@@ -68,11 +98,11 @@ gls.left[2] = {
         condition = condition.check_git_workspace,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.orange, colors.bg}
+        highlight = {colors.fg, colors.bg}
     }
 }
 
-gls.left[3] = {
+gls.left[5] = {
     GitBranch = {
         provider = 'GitBranch',
         condition = condition.check_git_workspace,
@@ -82,7 +112,7 @@ gls.left[3] = {
     }
 }
 
-gls.left[4] = {
+gls.left[6] = {
     DiffAdd = {
         provider = 'DiffAdd',
         condition = condition.hide_in_width,
@@ -90,7 +120,7 @@ gls.left[4] = {
         highlight = {colors.green, colors.bg}
     }
 }
-gls.left[5] = {
+gls.left[7] = {
     DiffModified = {
         provider = 'DiffModified',
         condition = condition.hide_in_width,
@@ -98,7 +128,7 @@ gls.left[5] = {
         highlight = {colors.blue, colors.bg}
     }
 }
-gls.left[6] = {
+gls.left[8] = {
     DiffRemove = {
         provider = 'DiffRemove',
         condition = condition.hide_in_width,
@@ -106,6 +136,7 @@ gls.left[6] = {
         highlight = {colors.red, colors.bg}
     }
 }
+
 
 gls.right[1] = {
     DiagnosticError = {provider = 'DiagnosticError', icon = '  ', highlight = {colors.error_red, colors.bg}}
