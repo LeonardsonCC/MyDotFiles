@@ -21,6 +21,7 @@ nnoremap K :lua vim.lsp.buf.hover()<CR>
 nnoremap <Leader>lh :lua vim.lsp.buf.hover()<CR>
 nnoremap <Leader>lf :lua vim.lsp.buf.formatting()<CR>
 vnoremap <Leader>lf :lua vim.lsp.buf.range_formatting()<CR>
+nnoremap <Leader>la :lua vim.lsp.buf.code_action()()<CR>
 nnoremap <Leader>l] :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <Leader>l[ :lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <Leader>lgd :lua vim.lsp.buf.definition()<CR>
