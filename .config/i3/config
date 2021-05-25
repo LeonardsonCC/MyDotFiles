@@ -192,7 +192,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 focus_follows_mouse no
 
-bindsym $mod+Shift+l exec "i3lock -c 000000"
+bindsym $mod+Shift+l exec "i3lock-fancy"
 gaps inner 10
 smart_gaps on
 smart_borders on
@@ -205,5 +205,6 @@ exec_always --no-startup-id xrdb -load ~/.Xresources
 # exec_always --no-startup-id $HOME/.config/conky/conky-start.sh
 exec_always --no-startup-id $HOME/.config/dunst/dunst-start.sh
 
+exec_always --no-startup-id setxkbmap -layout us -variant intl
 
 bindsym $mod+Shift+b exec "firefox-developer-edition"
