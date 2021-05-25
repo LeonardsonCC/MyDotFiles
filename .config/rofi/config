@@ -1,1 +1,1 @@
-rofi.theme: /usr/share/rofi/themes/solarized.rasi
+rofi.theme: .config/rofi/base16-tomorrow-night.rasi
