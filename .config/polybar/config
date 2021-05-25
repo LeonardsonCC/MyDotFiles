@@ -27,9 +27,9 @@ format-offset =
 
 [colors]
 ; Main Theme ============
-background = #03224A
-foreground = #5F1C43
-secondary  = #eea89b
+background = #1D1F21
+foreground = #81a2be
+secondary  = #b4b7b4
 alert      = #bd2c40
 volume-min = #a3be8c
 volume-med = #ebcb8b
