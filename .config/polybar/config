@@ -89,7 +89,7 @@ font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3
-modules-center = spotify1
+modules-center = weather spotify1
 modules-right =  memory2 arrow3 cpu2 arrow2 pulseaudio arrow3 date
 
 separator =
@@ -1035,14 +1035,14 @@ format-muted-background = ${colors.background}
 
 [module/weather]
 type = custom/script
-interval = 10
+interval = 60
 format = <label>
 format-prefix = " "
-format-prefix-foreground = #3EC13F
-format-underline = #3EC13F
+format-prefix-foreground = ${colors.foregorund}
+format-underline = ${colors.foreground}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-exec = python -u ~/.config/polybar/scripts/weather.py
+exec = curl -s "wttr.in/Imbituba?format=%l%20-%20%C%20%t"
 tail = true
 
 #################################################################################
@@ -1119,14 +1119,6 @@ ramp-signal-foreground = ${colors.foreground}
 
 ################################################################################
 
-[module/workspaces-xmonad]
-type = custom/script
-exec = tail -F /tmp/.xmonad-workspace-log
-exec-if = [ -p /tmp/.xmonad-workspace-log ]
-tail = true
-
-################################################################################
-
 [module/xbacklight]
 ;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
 type = internal/xbacklight
@@ -1171,38 +1163,4 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.background}
 label-indicator-underline = ${colors.foreground}
 
-
-################################################################################
-
-[module/xmenu]
-type = custom/script
-interval = 1200
-exec = echo "  "
-click-left = "sh /home/dt/xmenu/xmenu.sh"
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-################################################################################
-
-[module/xwindow]
-;https://github.com/jaagr/polybar/wiki/Module:-xwindow
-type = internal/xwindow
-
-; Available tokens:
-;   %title%
-; Default: %title%
-label = %title%
-label-maxlen = 50
-
-format-prefix = "  "
-format-prefix-underline = #292d3e
-format-underline = #e1acff
-format-foreground = #e1acff
-format-background = ${colors.background}
-
-###############################################################################
-
-
-
-###############################################################################
 # vim:ft=dosini
-
