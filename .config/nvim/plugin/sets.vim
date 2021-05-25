@@ -26,6 +26,6 @@ set shortmess+=c
 set colorcolumn=80
 set termguicolors
 set t_Co=256
-colorscheme base16-gruvbox-dark-hard
+colorscheme base16-tomorrow-night
 
 set completeopt=menuone,noinsert,noselect
