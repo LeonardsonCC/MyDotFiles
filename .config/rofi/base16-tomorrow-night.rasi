@@ -64,7 +64,7 @@ listview {
 }
 element {
     border:           0;
-    padding:          1px ;
+    padding:          5px 1px ;
 }
 element normal.normal {
     background-color: @normal-background;
