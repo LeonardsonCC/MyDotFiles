@@ -202,7 +202,7 @@ exec_always --no-startup-id compton
 
 exec_always --no-startup-id feh --bg-fill ~/Wallpapers/SWAY.jpg
 exec_always --no-startup-id xrdb -load ~/.Xresources
-# exec_always --no-startup-id $HOME/.config/conky/conky-start.sh
+exec_always --no-startup-id $HOME/.config/conky/conky-start.sh
 exec_always --no-startup-id $HOME/.config/dunst/dunst-start.sh
 
 exec_always --no-startup-id setxkbmap -layout us -variant intl
