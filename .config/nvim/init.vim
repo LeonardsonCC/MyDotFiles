@@ -39,8 +39,11 @@ Plug 'shaunsingh/moonlight.nvim'
 
 call plug#end()
 
+" Colorscheme
+colorscheme base16-tomorrow-night
+
 " LUA REQUIRE
-lua require("lsp")
+lua require("lsp_config")
 lua require("telescope_config")
 lua require("galaxyline_config")
 lua require("todo_comments_config")
