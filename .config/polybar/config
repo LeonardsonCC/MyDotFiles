@@ -82,15 +82,15 @@ module-margin-left = 0
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "UbuntuMono Nerd Font Mono:size=10;2"
-font-1 = "UbuntuMono Nerd Font Mono:size=16;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
-font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
-font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
+font-0 = "UbuntuMonoDerivativePowerline Power Font:size=8;2"
+font-1 = "UbuntuMono Nerd Font Mono:size=18;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;1"
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
+font-4 = "Font Awesome 5 Brands:pixelsize=12;1"
 
 modules-left = i3
-modules-center = weather spotify1
-modules-right =  wireless-network arrow3 battery arrow2 memory2 arrow3 cpu2 arrow2 pulseaudio arrow3 date
+modules-center = arrow5 spotify1 arrow4 
+modules-right =  wireless-network arrow3 battery arrow2 memory2 arrow3 cpu2 arrow2 pulseaudio arrow3 weather date
 
 separator =
 
@@ -217,8 +217,8 @@ label-mode-background = #FFBB00
 ; focused = Active workspace on focused monitor
 label-focused = %icon% %name%
 label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.secondary}
-label-focused-underline = ${colors.secondary}
+label-focused-foreground = ${colors.foreground}
+label-focused-underline = ${colors.foreground}
 label-focused-padding = 2
 
 ; Available tokens:
@@ -281,6 +281,22 @@ content-background = ${colors.foreground}
 ; grey to Blue
 type = custom/text
 content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+
+[module/arrow4]
+; grey to Blue
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+
+[module/arrow5]
+; grey to Blue
+type = custom/text
+content = "%{T2} %{T-}"
 content-font = 2
 content-foreground = ${colors.foreground}
 content-background = ${colors.background}
@@ -800,12 +816,11 @@ exec = ~/.config/polybar/scripts/spotify1.sh
 interval = 1
 
 ;format = <label>
-format-foreground = ${colors.secondary}
-format-background = ${colors.background}
+format-foreground = #FFF
+format-background = ${colors.foreground}
 format-padding = 2
-format-underline = ${colors.secondary}
 format-prefix = "  "
-format-prefix-foreground = ${colors.secondary}
+format-prefix-foreground = #FFF
 label = %output:0:150%
 
 ################################################################################
@@ -911,14 +926,12 @@ format-muted-background = ${colors.background}
 [module/weather]
 type = custom/script
 interval = 60
-format = <label>
+format = <label> /
 format-prefix = " "
-format-prefix-foreground = ${colors.foregorund}
-format-underline = ${colors.foreground}
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-exec = curl -s "wttr.in/Imbituba?format=%l%20-%20%C%20%t"
-tail = true
+format-prefix-foreground = #FFF
+format-foreground = #FFF
+format-background = ${colors.foreground}
+exec = curl -s "wttr.in/Imbituba?format=%c%t"
 
 #################################################################################
 
