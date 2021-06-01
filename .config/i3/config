@@ -206,4 +206,9 @@ exec_always --no-startup-id $HOME/.config/dunst/dunst-start.sh
 
 exec_always --no-startup-id setxkbmap -layout us -variant intl
 
+# Workspace shit
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox-developer'
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/kitty'
+exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/discord'
+
 bindsym $mod+Shift+b exec "firefox-developer-edition"
