@@ -82,14 +82,14 @@ module-margin-left = 0
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "UbuntuMonoDerivativePowerline Power Font:size=8;2"
+font-0 = "Fira Mono for Powerline:size=8;2"
 font-1 = "UbuntuMono Nerd Font Mono:size=18;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=12;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=12;1"
 
 modules-left = i3
-modules-center = arrow5 spotify1 arrow4 
+modules-center = arrow5 now-playing arrow4 
 modules-right =  wireless-network arrow3 battery arrow2 memory2 arrow3 cpu2 arrow2 pulseaudio arrow3 weather date
 
 separator =
@@ -330,7 +330,7 @@ card = amdgpu_bl0
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
-format = <bar> <label>
+format = <ramp> <label>
 format-foreground = #ffffff
 format-background = ${colors.foreground}
 
@@ -372,6 +372,7 @@ format-discharging-background = ${colors.foreground}
 
 label-full-foreground = #FFF
 format-full-background = ${colors.foreground}
+label-full =  %percentage%%
 
 ################################################################################
 
@@ -1028,5 +1029,20 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.background}
 label-indicator-underline = ${colors.foreground}
+
+###############################################################################
+
+[module/now-playing]
+type = custom/script
+tail = true
+;format-prefix = ""
+update_delay = 0.5
+format = <label>
+exec = ~/.config/polybar/scripts/now-playing.py
+click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+format-foreground = #FFF
+format-background = ${colors.foreground}
+format-padding = 5
+format-spacing = 5
 
 # vim:ft=dosini
