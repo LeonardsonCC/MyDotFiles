@@ -16,7 +16,7 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground = #FF0000
+format-foreground = #8b2121
 format-background = #00FF00
 format-underline =
 format-overline =
@@ -28,7 +28,7 @@ format-offset =
 [colors]
 ; Main Theme ============
 background = #1D1F21
-foreground = #81a2be
+foreground = #8b2121
 secondary  = #b4b7b4
 alert      = #bd2c40
 volume-min = #a3be8c
