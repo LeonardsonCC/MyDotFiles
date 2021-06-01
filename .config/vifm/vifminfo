@@ -1,0 +1,102 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/leonardson/
+	..
+1622566140
+'b
+	/home/leonardson/bin/
+	..
+1622566140
+'h
+	/home/leonardson/
+	..
+1622566140
+'z
+	/home/leonardson/.config/vifm
+	..
+1622566140
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/leonardson/Wallpapers
+	
+0
+d/home/leonardson/vifmimg
+	..
+0
+d/home/leonardson
+	Wallpapers
+13
+d/home/leonardson/Wallpapers
+	01.jpeg
+2
+d/home/leonardson
+	Wallpapers
+13
+d/home/leonardson/Wallpapers
+	..
+0
+d/home/leonardson
+	Wallpapers
+13
+d/home/leonardson/Wallpapers
+	..
+0
+d/home/leonardson
+	Wallpapers
+13
+d/home/leonardson/Wallpapers
+	01.jpeg
+2
+d
+
+# Right window history (oldest to newest):
+D/home/leonardson/vifmimg
+	..
+0
+D/home/leonardson
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:qa
+:fileviewer
+:fileviewer *
+:view
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0
