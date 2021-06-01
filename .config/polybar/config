@@ -449,7 +449,7 @@ type = internal/cpu
 interval = 1
 format-foreground = #fff
 format-background = ${colors.foreground}
-format-prefix = "  "
+format-prefix = " / "
 format-prefix-foreground = #fefefe
 
 label-font = 1
