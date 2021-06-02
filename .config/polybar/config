@@ -717,7 +717,9 @@ click-right = pavucontrol
 format-volume-foreground = #fff
 format-volume-background = ${colors.foreground}
 format-volume-prefix = " /  "
-
+label-muted =  / ﱝ muted
+label-muted-foreground = #fff
+label-muted-background = ${colors.foreground}
 
 [module/pulseaudio-control]
 type = custom/script
