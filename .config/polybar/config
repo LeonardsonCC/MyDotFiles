@@ -954,13 +954,13 @@ interface = wlp1s0
 interval = 3.0
 label-connected = %essid%
 
-format-connected = <label-connected>
+format-connected = "<label-connected> / "
 ;format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = #ffffff
-format-connected-background = ${colors.background}
+format-connected-background = ${colors.foreground}
 format-connected-prefix = "  "
 format-connected-prefix-foreground = #ffffff
-format-connected-prefix-background = ${colors.background}
+format-connected-prefix-background = ${colors.foreground}
 
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.alert}
