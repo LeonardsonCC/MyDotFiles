@@ -1,7 +1,7 @@
 [global]
 monitor = 0
 follow = mouse
-geometry = "280x50-10+44"
+geometry = "280x50-10+46"
 indicate_hidden = yes
 shrink = no
 separator_height = 4
@@ -30,6 +30,7 @@ browser = x-www-browser -new-tab
 always_run_script = true
 title = Dunst
 class = Dunst
+corner_radius = 5
 
 [shortcuts]
 close = ctrl+shift+space
