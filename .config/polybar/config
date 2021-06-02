@@ -29,7 +29,7 @@ format-offset =
 ; Main Theme ============
 foreground = #1D1F21
 background = #00000000
-secondary  = #b4b7b4
+secondary  = #595959
 alert      = #bd2c40
 volume-min = #a3be8c
 volume-med = #ebcb8b
@@ -99,7 +99,7 @@ tray-position =
 tray-detached = false
 tray-maxsize = 20
 tray-background = ${colors.foreground}
-tray-offset-x = 0
+tray-offset-x = -10
 tray-offset-y = 0
 tray-padding = 4
 tray-scale = 1.0
