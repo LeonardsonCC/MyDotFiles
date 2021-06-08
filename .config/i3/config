@@ -144,16 +144,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
         bindsym ccedilla resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -192,7 +192,7 @@ bindsym $mod+m move workspace to output left
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-focus_follows_mouse no
+focus_follows_mouse yes
 
 bindsym $mod+Shift+l exec "i3lock-fancy"
 gaps inner 10
@@ -202,7 +202,7 @@ border_radius 5
 for_window [class="^.*"] border pixel 0
 for_window [title="^.*"] border pixel 0
 
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --corner-radius 5
 exec_always --no-startup-id feh --bg-fill ~/Wallpapers/06.jpg
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id $HOME/.config/conky/conky-start.sh
@@ -211,8 +211,6 @@ exec_always --no-startup-id $HOME/.config/dunst/dunst-start.sh
 exec_always --no-startup-id setxkbmap -layout us -variant intl
 
 # Workspace shit
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox-developer'
 exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/kitty'
 exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/discord'
-
-bindsym $mod+Shift+b exec "firefox-developer-edition"
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox-developer'
