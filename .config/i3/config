@@ -37,6 +37,8 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+d exec rofi -show drun -show-icons
+# start exec launcher
+bindsym $mod+Shift+d exec rofi -show run
 # start window menu
 bindsym $mod+Tab exec rofi -show window
 # start file browser
@@ -199,8 +201,9 @@ gaps inner 10
 #smart_gaps on
 #smart_borders on
 border_radius 5
-for_window [class="^.*"] border pixel 0
-for_window [title="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
+for_window [title="^.*"] border pixel 3
+client.focused #555555 #555555 #555555 #555555 #555555
 
 exec_always --no-startup-id picom
 exec_always --no-startup-id feh --bg-fill ~/Wallpapers/06.jpg
