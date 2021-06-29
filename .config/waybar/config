@@ -1,6 +1,6 @@
 {
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["custom/clock"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["custom/clock", "custom/waybar-media"],
     "modules-right": ["network", "pulseaudio", "battery", "tray", "custom/power"],
     // Modules configuration
     "sway/workspaces": {
@@ -89,20 +89,16 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
+    "custom/waybar-media": {
         "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        "exec": "$HOME/.config/waybar/modules/playerctl.sh status",
+        "on-click": "$HOME/.config/waybar/modules/playerctl.sh playpause",
+        "on-scroll-up": "$HOME/.config/waybar/modules/playerctl.sh previous",
+        "on-scroll-down": "$HOME/.config/waybar/modules/playerctl.sh next",
+        "escape": true
     },
-
-	"custom/power": {
-		"format": "",
-		"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
-	}
+    "custom/power": {
+      "format": "",
+      "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
+    }
 }
