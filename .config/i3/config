@@ -37,6 +37,8 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+d exec rofi -show drun -show-icons
+# start exec launcher
+bindsym $mod+Shift+d exec rofi -show run
 # start window menu
 bindsym $mod+Tab exec rofi -show window
 # start file browser
@@ -194,13 +196,15 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 focus_follows_mouse yes
 
-bindsym $mod+Shift+l exec "i3lock-fancy"
+bindsym $mod+Shift+l exec $HOME/bin_scripts/myi3lock
 gaps inner 10
 #smart_gaps on
 #smart_borders on
-border_radius 5
-for_window [class="^.*"] border pixel 0
-for_window [title="^.*"] border pixel 0
+hide_edge_borders smart
+border_radius 3
+for_window [class="^.*"] border pixel 5
+for_window [title="^.*"] border pixel 5
+client.focused #C20202 #C20202 #CCCCCC #C20202 #C20202
 
 exec_always --no-startup-id picom
 exec_always --no-startup-id feh --bg-fill ~/Wallpapers/06.jpg
