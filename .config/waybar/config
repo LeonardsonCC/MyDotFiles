@@ -1,115 +1,104 @@
 {
-    "layer": "bottom",
-    "position": "top",
-    "height": 30,
-
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": [],
-    "modules-right": ["tray", "custom/spotify", "custom/weather", "custom/mail",  "custom/storage", "backlight", "pulseaudio", "network", "battery", "clock"],
-    "sway/mode": {
-        "format": " {}"
-    },
+    "modules-center": ["custom/clock", "custom/waybar-media"],
+    "modules-right": ["network", "pulseaudio", "battery", "tray", "custom/power"],
+    // Modules configuration
     "sway/workspaces": {
-        "format": "{name}",
-        "disable-scroll": true
-    },
-    "sway/window": {
-        "max-length": 80,
-        "tooltip": false
-    },
-    "clock": {
-        "format": "{:%a, %d/%m/%Y %H:%M}",
-        "tooltip": false
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""],
-        "format-charging": "{capacity}% ",
-        "interval": 30,
-        "states": {
-            "warning": 25,
-            "critical": 10
-        },
-        "tooltip": false
+         "disable-scroll": true,
+         "all-outputs": true,
+         "format": "{name}: {icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "8": "",
+             "9": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
     },
     "network": {
-        "format": "{essid} {icon}",
-        "format-alt": "{ipaddr}/{cidr} {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": {
-            "wifi": [""],
-            "ethernet": [""],
-            "disconnected": ["Not Connected "]
-        },
-        "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected"
-    },
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-alt": "{volume} {icon}",
-        "format-alt-click": "click-right",
-        "format-muted": "",
-        "format-icons": {
-            "phone": [" ", " ", " ", " "],
-            "default": ["", "", "", ""]
-        },
-        "scroll-step": 10,
-        "on-click": "pavucontrol",
-        "tooltip": false
-    },
-    "custom/spotify": {
-        "interval": 1,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/spotify.sh",
-        "exec-if": "pgrep spotify",
-        "escape": true
-    },
-    "custom/storage": {
-        "format": "{} ",
-        "format-alt": "{percentage}% ",
-        "format-alt-click": "click-right",
-        "return-type": "json",
-        "interval": 60,
-        "exec": "~/.config/waybar/modules/storage.sh"
-    },
-    "backlight": {
-        "format": "{icon}",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": ["", ""],
-        "on-scroll-down": "light -U 1",
-        "on-scroll-up": "light -A 1"
-    },
-    "custom/weather": {
-        "format": "{}",
-        "format-alt": "{alt}: {}",
-        "format-alt-click": "click-right",
-        "interval": 1800,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/weather.sh",
-        "exec-if": "ping wttr.in -c1"
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "", 
+        "max-length": 50,
+        "on-click": "kitty -e 'nmtui'"
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        },
-        "tooltip": false
-    },
-    "custom/mail": {
-        "format": "",
-        "format-alt": "{alt} ",
-        "format-alt-click": "click-right",
-        "interval": 60,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/mail.py",
-        "tooltip": false
+            "activated": "",
+            "deactivated": ""
+        }
     },
     "tray": {
-        "icon-size": 18
+        "icon-size": 15,
+        "spacing": 10
+    },
+    "custom/clock": {
+        "exec": "date +'%d/%m/%Y %H:%M:%S'",
+        "interval": 5
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 82,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "0% {icon} ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/waybar-media": {
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/modules/playerctl.sh status",
+        "on-click": "$HOME/.config/waybar/modules/playerctl.sh playpause",
+        "on-scroll-up": "$HOME/.config/waybar/modules/playerctl.sh previous",
+        "on-scroll-down": "$HOME/.config/waybar/modules/playerctl.sh next",
+        "escape": true
+    },
+    "custom/power": {
+      "format": "",
+      "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
     }
 }
