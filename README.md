@@ -18,6 +18,7 @@ config remote add origin git@github.com:LeonardsonCC/MyDotFiles.git
 ## Current Workspace
 - WM: [dwm](https://github.com/LeonardsonCC/dwm);
 - Terminal: [st](https://github.com/LeonardsonCC/st);
+- Shell: [zsh](https://ohmyz.sh/);
 - Font: [UbuntuMono Nerd Font Mono](https://github.com/LeonardsonCC/MyDotFiles/blob/main/.local/share/fonts/Ubuntu%20Mono%20Nerd%20Font%20Complete%20Mono.ttf);
 - Emoji Font: [Symbola](https://github.com/LeonardsonCC/MyDotFiles/blob/main/.local/share/fonts/Symbola.ttf) (My suckless apps does not like color emojis 😕);
 - Application Menu: [dmenu](https://github.com/LeonardsonCC/dmenu);
@@ -25,5 +26,6 @@ config remote add origin git@github.com:LeonardsonCC/MyDotFiles.git
 
 ## To-do
 - [ ] Clear unsed [fonts](https://github.com/LeonardsonCC/MyDotFiles/tree/main/.local/share/fonts);
+- [ ] Clear old configs;
 - [ ] Script to just install everything;
 - [ ] Improve versioning with [stow](https://www.gnu.org/software/stow/manual/stow.html);
