@@ -2,10 +2,13 @@
 [keybindings]
 [profiles]
   [[default]]
+    background_darkness = 0.85
+    background_type = image
     cursor_color = "#aaaaaa"
     font = UbuntuMono Nerd Font Mono 11
     show_titlebar = False
     use_system_font = False
+    background_image = /home/leonardson/Wallpapers/07.jpg
 [layouts]
   [[default]]
     [[[window0]]]
